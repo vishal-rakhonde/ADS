@@ -8,11 +8,7 @@ Return a list answer, where answer[i] is the list of ancestors of the ith node, 
 
 A node u is an ancestor of another node v if u can reach v via a set of edges.
 
- 
-
 Example 1:
-
-
 Input: n = 8, edgeList = [[0,3],[0,4],[1,3],[2,4],[2,7],[3,5],[3,6],[3,7],[4,6]]
 Output: [[],[],[],[0,1],[0,2],[0,1,3],[0,1,2,3,4],[0,1,2,3]]
 Explanation:
@@ -23,9 +19,8 @@ The above diagram represents the input graph.
 - Node 5 has three ancestors 0, 1, and 3.
 - Node 6 has five ancestors 0, 1, 2, 3, and 4.
 - Node 7 has four ancestors 0, 1, 2, and 3.
+
 Example 2:
-
-
 Input: n = 5, edgeList = [[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
 Output: [[],[0],[0,1],[0,1,2],[0,1,2,3]]
 Explanation:
