@@ -1,8 +1,5 @@
 /* Find the Minimum and Maximum Number of Nodes Between Critical Points
-Medium
-Topics
-Companies
-Hint
+
 A critical point in a linked list is defined as either a local maxima or a local minima.
 
 A node is a local maxima if the current node has a value strictly greater than the previous node and the next node.
@@ -47,3 +44,54 @@ Constraints:
 
 The number of nodes in the list is in the range [2, 105].
 1 <= Node.val <= 105  */
+
+class ListNode {
+    int val;
+    ListNode next;
+    
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+public class NodesBetweenCriticalPoints {
+    public int[] nodesBetweenCriticalPoints(ListNode head) {
+        ListNode prev = head;
+        head = head.next;
+        int i = 1, mindist = Integer.MAX_VALUE, prev_i = Integer.MIN_VALUE, first_i = -1;
+        while (head.next != null) {
+            if ((prev.val < head.val && head.val > head.next.val) || 
+                (prev.val > head.val && head.val < head.next.val)) {
+                
+                if (prev_i != Integer.MIN_VALUE) {
+                    mindist = Math.min(mindist, i - prev_i);
+                }
+                if (first_i == -1) {
+                    first_i = i;
+                }
+                prev_i = i;
+            }
+            prev = head;
+            head = head.next;
+            i++;
+        }
+        if (mindist == Integer.MAX_VALUE) {
+            return new int[] {-1, -1};
+        }
+        return new int[] {mindist, prev_i - first_i};
+    }
+    
+    public static void main(String[] args) {
+        
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(3);
+        head.next.next = new ListNode(2);
+        head.next.next.next = new ListNode(5);
+        
+        NodesBetweenCriticalPoints solution = new NodesBetweenCriticalPoints();
+        int[] result = solution.nodesBetweenCriticalPoints(head);
+        
+        System.out.println("Minimum distance between critical points: " + result[0]);
+        System.out.println("Distance between first and last critical points: " + result[1]);
+    }
+}
