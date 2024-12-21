@@ -52,7 +52,6 @@ class Solution {
             }
             return parent[x];
         }
-
         public boolean union(int x, int y) {
             int rootX = find(x);
             int rootY = find(y);
