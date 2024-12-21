@@ -31,7 +31,6 @@ edges[i].length == 3
 1 <= ui < vi <= n
 All tuples (typei, ui, vi) are distinct.
 */
-
 class Solution {
     class UnionFind {
         int[] parent;
