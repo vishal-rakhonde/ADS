@@ -26,7 +26,6 @@ class DoublyLinkedListDeleteNode {
 
         del = null;
     }
-
     void display() {
         Node last = null;
         Node current = head;
