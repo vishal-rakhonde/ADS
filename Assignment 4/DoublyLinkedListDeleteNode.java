@@ -11,7 +11,6 @@ class DoublyLinkedListDeleteNode {
             prev = null;
         }
     }
-
     void deleteNode(Node del) {
         if (head == null || del == null)
             return;
