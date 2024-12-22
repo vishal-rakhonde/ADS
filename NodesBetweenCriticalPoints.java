@@ -11,7 +11,6 @@ Note that a node can only be a local maxima/minima if there exists both a previo
 Given a linked list head, return an array of length 2 containing [minDistance, maxDistance] where minDistance is the minimum distance between any two distinct critical points and maxDistance is the maximum distance between any two distinct critical points. If there are fewer than two critical points, return [-1, -1].
 
  
-
 Example 1:
 Input: head = [3,1]
 Output: [-1,-1]
